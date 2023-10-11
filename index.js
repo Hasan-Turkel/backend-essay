@@ -25,7 +25,9 @@ app.all("/", (req, res) => {
 })
 
 app.use("/topics", require("./routes/topic.router"))
+app.use ("/essays", require("./routes/essay.router"))
 
 app.use(require("./middlewares/errorhandler"))
+
 
 app.listen(PORT, ()=>console.log('http://127.0.0.1:' + PORT))
