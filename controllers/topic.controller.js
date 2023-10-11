@@ -43,7 +43,7 @@ module.exports = {
     },
     delete: async (req, res) =>{ 
 
-        const data = await Topic.delete({_id:req.params.id})
+        const data = await Topic.deleteOne({_id:req.params.id})
         res.status(204).send({
             error: false,
             data
