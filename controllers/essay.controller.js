@@ -16,7 +16,9 @@ module.exports = {
         const data = await req.getModelList(Essay, "topicId")
         res.status(200).send({
             error:false,
-            data})
+            details: await req.getModelListDetails(Essay),
+            data
+        })
     },
 
 
