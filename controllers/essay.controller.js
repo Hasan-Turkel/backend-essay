@@ -11,6 +11,16 @@ module.exports = {
         })
     },
 
+    listTopicEssay: async (req, res)=>{
+
+        const data = await Essay.find({topicId:req.params.topicId})
+        res.status(200).send({
+            error:false,
+            result:data
+        })
+
+    },
+
     create: async (req, res) =>{
 
         const data = await Essay.create(req.body)

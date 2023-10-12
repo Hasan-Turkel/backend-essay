@@ -13,4 +13,6 @@ router.route("/:id")
     .post(essay.update)
     .delete(essay.delete)
 
+router.get("/:topicId/essays", essay.listTopicEssay)
+
 module.exports = router
