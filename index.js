@@ -15,6 +15,8 @@ dbConnection()
 
 app.use(express.json())
 
+app.use(require("./middlewares/findSearchSort"))
+
 app.all("/", (req, res) => {
 
     res.send({

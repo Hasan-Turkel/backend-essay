@@ -3,13 +3,23 @@
 const Essay = require("../models/essay.model")
 
 module.exports = {
-    list: async (req, res) => {
+    /*list: async (req, res) => {
         const data = await Essay.find().populate("topicId")
         res.status(200).send({
             error:false,
             data
         })
+    },*/
+
+    list: async (req, res)=>{
+
+        const data = await req.getModelList(Essay, "topicId")
+        res.status(200).send({
+            error:false,
+            data})
     },
+
+
 
     listTopicEssay: async (req, res)=>{
 
