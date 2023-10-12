@@ -4,7 +4,7 @@ const Essay = require("../models/essay.model")
 
 module.exports = {
     list: async (req, res) => {
-        const data = await Essay.find()
+        const data = await Essay.find().populate("topicId")
         res.status(200).send({
             error:false,
             data
@@ -22,7 +22,7 @@ module.exports = {
     },
     read: async (req, res) =>{
 
-        const data = await Essay.findOne({_id:req.params.id})
+        const data = await Essay.findOne({_id:req.params.id}).populate("topicId")
         res.status(200).send({
             error:false,
             data
